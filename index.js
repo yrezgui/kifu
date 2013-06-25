@@ -29,6 +29,9 @@ app.use(express.static('public'));
 // ex: res.render('users.html').
 app.set('view engine', 'html');
 
+// parse request bodies (req.body)
+app.use(express.bodyParser());
+
 // Application routing
 require('./routes.js')(app);
 
