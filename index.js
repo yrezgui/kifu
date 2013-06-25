@@ -4,9 +4,7 @@ process.env['NODE_ENV'] = 'development';
 /**
  * Module dependencies.
  */
-
 var express = require('express');
-var open	= require('open');
 
 // Application settings
 var config = require('./config.js');
@@ -31,13 +29,9 @@ app.use(express.static('public'));
 // ex: res.render('users.html').
 app.set('view engine', 'html');
 
-app.get('/', function(req, res){
-  res.render('index', {
-    title: config.param('title'),
-    stripe_key: config.param('stripe_publicKey'),
-    stripe_currency: config.param('stripe_currency'),
-  });
-});
+// Application routing
+require('./routes.js')(app);
+
 
 if (!module.parent) {
   var port = config.param('express_port');
@@ -45,6 +39,7 @@ if (!module.parent) {
   console.log('\n  listening on port ' + port + '\n');
 
   if(process.env['NODE_ENV'] == 'development') {
+    var open  = require('open');
   	open('http://localhost:' + port);
   }
 }
