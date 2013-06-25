@@ -1,16 +1,16 @@
 // Module dependencies
 var config    = require('./config.js');
 var Q         = require('q');
-var stripe    = require('stripe');
+var stripe    = require('stripe')(config.param('stripe_privateKey'));
 var twilio    = require('twilio');
 var sendgrid  = require('sendgrid');
 
 // Stripe charge processing
-var stripeProcessing = function stripeProcessing() {
+var stripeProcessing = function stripeProcessing(obj) {
   var newCharge = {
-    amount: req.body.amount,
+    amount: obj.amount,
     currency: config.param('stripe_currency'),
-    card: req.body.stripe_token
+    card: obj.stripe_token
   };
 
   var deferred = Q.defer();
@@ -41,10 +41,13 @@ module.exports = function(parent){
 
   parent.post('/donate', function(req, res){
 
-    if(!req.xhr) {
-      res.redirect('/');
-    }
+    stripeProcessing(req.body).then(
+      function success(result) {
+        res.send({error: false, result: 'ok'});
+      },
 
-    res.send({error: false, result: 'ok'});
+      function error(error) {
+        res.send({error: false, result: 'not ok'});
+      });
   });
 };
