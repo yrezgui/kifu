@@ -58,15 +58,18 @@
                 To play with the demo, you can use this card number to test <i>4242 4242 4242 4242</i> with a valid expire date and a random CVC number.
               </p>
               <p>
-                <a class="pure-button donate" href="#" style="background: #f08d9a;">
+                If I have time, I will make an online service which can generate page like this, easily customizable.
+              </p>
+              <p>
+                <a class="pure-button donate tiny" href="#" data-amount="10" data-description="You're a padawan !">
                   <img src="img/10.png">
                   <span>10$</span>
                 </a>
-                <a class="pure-button donate" href="#" style="background: #ee4056;">
+                <a class="pure-button donate normal" href="#" data-amount="25" data-description="You're a master jedi !">
                   <img src="img/25.png">
                   <span>25$</span>
                 </a>
-                <a class="pure-button donate" href="#" style="background: #e51937;">
+                <a class="pure-button donate big" href="#" data-amount="50" data-description="Oh...It's you Yoda ?">
                   <img src="img/50.png">
                   <span>50$</span>
                 </a>
@@ -89,5 +92,11 @@
         </footer>
       </div>
     </div>
+    <script>
+      var STRIPE_PUBLIC_KEY = '<%= stripe_key %>';
+      var STRIPE_CURRENCY   = '<%= stripe_currency %>';
+    </script>
+    <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
