@@ -145,6 +145,18 @@ a:focus {
     color: #ffffff;
 }
 
+.donate.tiny {
+  background: #f08d9a;
+}
+
+.donate.normal {
+  background: #ee4056;
+}
+
+.donate.big {
+  background: #e51937;
+}
+
 .pure-button.donate:hover {
   text-decoration: none;
 }
