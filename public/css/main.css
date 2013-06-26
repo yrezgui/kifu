@@ -171,6 +171,21 @@ a:focus {
   top: -20px;
 }
 
+aside {
+  padding: 3px 10px;
+  border-radius: 3px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+aside.success {
+  background: #1f8dd6;
+}
+
+aside.error {
+  background: #d61f4d;
+}
+
 .footer {
   text-align: center;
   padding: 1em 0;
@@ -207,4 +222,8 @@ a:focus {
   .content {
     padding: 2em 1em 0;
   }
+}
+
+.hide {
+  display: none;
 }
