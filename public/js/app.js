@@ -1,17 +1,23 @@
 var getPaymentToken = function getPaymentToken(token, amount){
 
-  var formObject = new FormData();  
+  // We're simulating a form with the new FormData HTML5 Object
+  var formObject = new FormData();
+  // We append payment data
   formObject.append('stripe_token', token.id);  
   formObject.append('amount', amount);  
 
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function onreadystatechange() {
     if (this.readyState === 4) {
+      // If the payment is done, we display a success message
       if (this.status === 200) {
-        console.log(xhr.responseText);
+        document.getElementById('result-success').style.display = 'block';
+        document.getElementById('result-error').style.display   = 'none';
       }
+      // If the payment has been failed, we display an error message
       else {
-        console.log('There was a problem with the request.');
+        document.getElementById('result-success').style.display = 'none';
+        document.getElementById('result-error').style.display   = 'block';
       }
     }
   };
