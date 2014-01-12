@@ -1,6 +1,6 @@
-![JoliCoeur Logo](http://farm4.staticflickr.com/3680/9108354577_9e3c2b81a2_o.png "JoliCoeur logo")
+![Kifu Logo](http://farm4.staticflickr.com/3680/9108354577_9e3c2b81a2_o.png "Kifu logo")
 
-JoliCoeur
+Kifu
 =========
 
 Web application to make easily a fundraising. It uses Stripe, Twilio, Mailjet and Sendgrid APIs
@@ -11,10 +11,6 @@ It's proudly powered by *NodeJS* and *Pure CSS* (full stack JS).
 This project is a simple demo.
 
 Enjoy coding! - [Yacine Rezgui](http://www.yrezgui.com)
-
-
-[Demo - jolicoeur.co](http://www.jolicoeur.co/)
------------------
 
 
 How to install it

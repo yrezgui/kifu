@@ -1,8 +1,8 @@
 var config = require('config-env').define('NODE_ENV', function (config) {
 	config.common({
-		name: 'jolicoeur',
+		name: 'kifu',
 		// Title
-		title: 'JoliCoeur',
+		title: 'Kifu',
 		// Express port
 		express_port: 3005,
 	});
