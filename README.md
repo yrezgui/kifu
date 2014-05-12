@@ -3,9 +3,8 @@
 Kifu
 =========
 
-Web application to make easily a fundraising. It uses Stripe, Twilio, Mailjet and Sendgrid APIs
+Web application to make easily a fundraising. It uses Stripe API.
 
-It uses *Stripe*, *Twilio* *Sendgrid* and *Mailjet* APIs.
 It's proudly powered by *NodeJS* and *Pure CSS* (full stack JS).
 
 This project is a simple demo.
